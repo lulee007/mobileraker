@@ -42,10 +42,9 @@ jobs:
       - name: Checkout Mobileraker Pro
         uses: actions/checkout@v4
         with:
-          repository: 'Clon1998/mobileraker_pro'
+          repository: 'Clon1998/mobileraker_pro_pub'
           ref: 'main'
           path: 'mobileraker_pro'
-          token: ${{ secrets.PRO_PAT }}
       
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -101,10 +100,10 @@ jobs:
       - name: Setup Environment Files
         working-directory: ./mobileraker
         run: |
-          echo "${{ secrets.GOOGLE_SERVICES_JSON }}" | base64 -d > ./android/app/google-services.json
-          echo "${{ secrets.KEY_PROPERTIES }}" | base64 -d > ./android/key.properties
-          echo "${{ secrets.PLAY_STORE_JKS }}" | base64 -d > ./android/app/gps.jks
-          echo "${{ secrets.AWESOME_NOTI_LICENSE }}" | base64 -d > ./lib/license.dart
+          # echo "${{ secrets.GOOGLE_SERVICES_JSON }}" | base64 -d > ./android/app/google-services.json
+          # echo "${{ secrets.KEY_PROPERTIES }}" | base64 -d > ./android/key.properties
+          # echo "${{ secrets.PLAY_STORE_JKS }}" | base64 -d > ./android/app/gps.jks
+          # echo "${{ secrets.AWESOME_NOTI_LICENSE }}" | base64 -d > ./lib/license.dart
           echo "${{ secrets.FIREBASE_OPTIONS }}" | base64 -d > ./lib/firebase_options.dart
       
       - name: Build Android APK
