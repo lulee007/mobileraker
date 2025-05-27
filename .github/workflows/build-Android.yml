@@ -62,6 +62,10 @@ jobs:
         working-directory: ./mobileraker_pro
         run: |
           sed -i 's/rxdart: ^0.27.3/rxdart: ^0.28.0/g' pubspec.yaml
+          sed -i 's/custom_lint: ^0.5.3/custom_lint: ^0.7.3/g' pubspec.yaml
+          sed -i 's/firebase_core: ^2.24.2/firebase_core: ^3.6.0/g' pubspec.yaml
+          sed -i 's/flutter_hooks: ^0.20.1/flutter_hooks: ^0.21.2/g' pubspec.yaml
+          
           flutter pub get
           flutter packages pub run build_runner build
       
