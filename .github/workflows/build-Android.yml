@@ -61,6 +61,7 @@ jobs:
       - name: Build Mobileraker Pro
         working-directory: ./mobileraker_pro
         run: |
+          sed -i 's/rxdart: ^0.27.3/rxdart: ^0.28.0/g' pubspec.yaml
           flutter pub get
           flutter packages pub run build_runner build
       
